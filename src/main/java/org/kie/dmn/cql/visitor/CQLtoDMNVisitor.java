@@ -95,10 +95,12 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
 
         InformationItem var = new InformationItem();
         var.setName( decision.getName() );
+        var.setId( generateId( var.getName()+"var" ) );
         decision.setVariable( var );
 
         LiteralExpression expression = new LiteralExpression();
         expression.setText( "/* "+ctx.expression().getText()+" */" );
+        expression.setId( generateId( expression.getText() ) );
         decision.setExpression( expression );
 
         this.currentDecision = decision;
@@ -119,9 +121,20 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
             InformationRequirement req = new InformationRequirement();
             req.setRequiredDecision( ref );
 
-            currentDecision.getInformationRequirement().add( req );
+            if( !contains(currentDecision.getInformationRequirement(), req ) ) {
+                currentDecision.getInformationRequirement().add( req );
+            }
         }
         return super.visitMemberInvocation(ctx);
+    }
+
+    private boolean contains(List<InformationRequirement> informationRequirement, InformationRequirement ir) {
+        for( InformationRequirement req : informationRequirement ) {
+            if( req.getRequiredDecision().getHref().equals( ir.getRequiredDecision().getHref() ) ) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private ItemDefinition generateValueSetType() {
