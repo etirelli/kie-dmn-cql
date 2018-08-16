@@ -22,9 +22,7 @@ public class CQLtoDMNTranslator {
         ParseTree tree = parser.library();
 
         CQLtoDMNVisitor visitor = new CQLtoDMNVisitor();
-        visitor.visit(tree);
-
-        return visitor.getDefinitions();
+        return (Definitions) visitor.visit(tree);
     }
 
 }
