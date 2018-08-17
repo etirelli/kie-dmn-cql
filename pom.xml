@@ -27,6 +27,11 @@
             <artifactId>kie-dmn-backend</artifactId>
             <version>7.10.0.Final</version>
         </dependency>
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-dmn-validation</artifactId>
+            <version>7.10.0.Final</version>
+        </dependency>
 
         <!-- External dependencies -->
         <dependency>

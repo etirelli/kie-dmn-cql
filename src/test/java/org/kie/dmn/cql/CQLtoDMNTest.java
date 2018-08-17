@@ -2,14 +2,15 @@ package org.kie.dmn.cql;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.kie.dmn.api.core.DMNMessage;
 import org.kie.dmn.api.marshalling.v1_1.DMNMarshaller;
 import org.kie.dmn.backend.marshalling.v1_1.DMNMarshallerFactory;
 import org.kie.dmn.model.v1_1.Definitions;
+import org.kie.dmn.validation.DMNValidator;
+import org.kie.dmn.validation.DMNValidatorFactory;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
+import java.io.*;
+import java.util.List;
 
 public class CQLtoDMNTest {
 
@@ -27,6 +28,13 @@ public class CQLtoDMNTest {
         DMNMarshaller marshaller = DMNMarshallerFactory.newDefaultMarshaller();
         String dmn = marshaller.marshal(def);
         System.out.println(dmn);
+
+        DMNValidator validator = DMNValidatorFactory.newValidator();
+        List<DMNMessage> validate = validator.validate(new StringReader(dmn), DMNValidator.Validation.VALIDATE_COMPILATION, DMNValidator.Validation.VALIDATE_MODEL, DMNValidator.Validation.VALIDATE_SCHEMA);
+
+        for( DMNMessage m : validate ) {
+            System.out.println( m );
+        }
 
         File out = new File("ChlamydiaScreening_CQM.dmn" );
         PrintWriter writer = new PrintWriter( out );

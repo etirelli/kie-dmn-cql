@@ -9,6 +9,7 @@ import javax.xml.namespace.QName;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 public class CQLtoDMNVisitor extends cqlBaseVisitor {
 
@@ -57,7 +58,10 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
         String namespace = "http://www.kiegroup.org/" + libname + ( libversion != null ? "/"+libversion : "" );
         definitions.setNamespace(  namespace );
         definitions.setName("Model");
-        definitions.setId(generateId(namespace));
+        definitions.setId(generateId());
+
+        definitions.getNsContext().put( "feel", "http://www.omg.org/spec/FEEL/20140401");
+        definitions.getNsContext().put( "kie", namespace );
 
         return definitions;
     }
@@ -66,18 +70,18 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
     public Object visitValuesetDefinition(cqlParser.ValuesetDefinitionContext ctx) {
         Decision decision = new Decision();
         decision.setName( unquote( ctx.identifier() ) );
-        decision.setId( generateId( decision.getName() ) );
+        decision.setId( generateId() );
 
         InformationItem var = new InformationItem();
         var.setName( decision.getName() );
-        var.setTypeRef( new QName( T_VALUESET ) );
+        var.setTypeRef( new QName( "kie:"+T_VALUESET ) );
 
         decision.setVariable( var );
 
         Context context = new Context();
         context.getContextEntry().add( createContextEntry( VALUESET_ID, "feel:string", quote( unquote( ctx.valuesetId() ) ) ) );
-        context.getContextEntry().add( createContextEntry( VERSION_SPECIFIER, "feel:string", quote( unquote( ctx.versionSpecifier() ) ) ) );
-        context.getContextEntry().add( createContextEntry( CODESYSTEMS, null, "null" ) );
+//        context.getContextEntry().add( createContextEntry( VERSION_SPECIFIER, "feel:string", quote( unquote( ctx.versionSpecifier() ) ) ) );
+//        context.getContextEntry().add( createContextEntry( CODESYSTEMS, null, "null" ) );
         // TODO: create the list of system identifiers
 //        org.kie.dmn.model.v1_1.List list = new org.kie.dmn.model.v1_1.List();
 //        list.addChildren( createLiteralExpression( ctx.codesystems().codesystemIdentifier() ) );
@@ -91,16 +95,17 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
     public Object visitExpressionDefinition(cqlParser.ExpressionDefinitionContext ctx) {
         Decision decision = new Decision();
         decision.setName( unquote( ctx.identifier() ) );
-        decision.setId( generateId( decision.getName() ) );
+        decision.setId( generateId() );
 
         InformationItem var = new InformationItem();
         var.setName( decision.getName() );
-        var.setId( generateId( var.getName()+"var" ) );
+        var.setId( generateId() );
         decision.setVariable( var );
 
         LiteralExpression expression = new LiteralExpression();
-        expression.setText( "/* "+ctx.expression().getText()+" */" );
-        expression.setId( generateId( expression.getText() ) );
+        //String exprString = "// " + ctx.expression().getText();
+        expression.setText("\"foo\"");
+        expression.setId( generateId() );
         decision.setExpression( expression );
 
         this.currentDecision = decision;
@@ -200,8 +205,8 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
         return text != null ? "\""+text+"\"" : "null";
     }
 
-    private String generateId(String seed) {
-        return "_"+ Math.abs(seed.hashCode());
+    private String generateId() {
+        return "_"+ UUID.randomUUID().toString();
     }
 
 
