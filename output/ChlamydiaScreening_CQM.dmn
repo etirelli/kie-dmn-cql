@@ -1,0 +1,270 @@
+<?xml version="1.0" ?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:kie="http://www.kiegroup.org/ChlamydiaScreening_CQM/2" xmlns:feel="http://www.omg.org/spec/FEEL/20140401" id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0" name="Model" expressionLanguage="http://www.omg.org/spec/FEEL/20140401" typeLanguage="http://www.omg.org/spec/FEEL/20140401" namespace="http://www.kiegroup.org/ChlamydiaScreening_CQM/2">
+  <itemDefinition name="tValueset" isCollection="false">
+    <itemComponent name="valuesetId" isCollection="false">
+      <typeRef>feel:string</typeRef>
+    </itemComponent>
+    <itemComponent name="versionSpecifier" isCollection="false">
+      <typeRef>feel:string</typeRef>
+    </itemComponent>
+    <itemComponent name="codesystems" isCollection="true">
+      <typeRef>feel:string</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <decision id="_9248bcc7-c5cc-4152-8a09-ea7e51113964" name="Female Administrative Sex">
+    <variable name="Female Administrative Sex" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.560.100.2"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_396519bd-685d-4050-b97b-4120156b5d3e" name="Other Female Reproductive Conditions">
+    <variable name="Other Female Reproductive Conditions" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.111.12.1006"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_384137e2-2a43-4cfd-9527-7f29e2fbd9fd" name="Genital Herpes">
+    <variable name="Genital Herpes" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.110.12.1049"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_c4bec7b3-c337-4ebf-8f55-332652a48ba4" name="Genococcal Infections and Venereal Diseases">
+    <variable name="Genococcal Infections and Venereal Diseases" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.112.12.1001"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_b81ebe44-1059-4df3-b8a8-f5b0e64d28b3" name="Inflammatory Diseases of Female Reproductive Organs">
+    <variable name="Inflammatory Diseases of Female Reproductive Organs" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.112.12.1004"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_e37221cb-e3da-4e7c-9769-ef24ed7c8c13" name="Chlamydia">
+    <variable name="Chlamydia" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.112.12.1003"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_24c508a0-3e95-4349-9161-ada86d33a5af" name="HIV">
+    <variable name="HIV" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.120.12.1003"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_8df1f501-fb49-49ba-a4dc-2122a6217a85" name="Syphilis">
+    <variable name="Syphilis" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.112.12.1002"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_389629a5-ebeb-461a-897c-33592ad3b517" name="Complications of Pregnancy Childbirth and the Puerperium">
+    <variable name="Complications of Pregnancy Childbirth and the Puerperium" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.111.12.1012"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_63311eda-a0e5-449f-94c5-f21a128131a6" name="Pregnancy Test">
+    <variable name="Pregnancy Test" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.111.12.1011"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_5631aadd-813f-43d7-8dc4-0ac8ea59ab68" name="Pap Test">
+    <variable name="Pap Test" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.108.12.1017"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_d1fb6ccb-1797-457a-864e-e79c737ecb5e" name="Lab Tests During Pregnancy">
+    <variable name="Lab Tests During Pregnancy" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.111.12.1007"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_7c7290b0-ce51-414b-a2bf-68f16f7e76f2" name="Lab Tests for Sexually Transmitted Infections">
+    <variable name="Lab Tests for Sexually Transmitted Infections" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.110.12.1051"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <decision id="_21ece065-6758-4980-ba21-70814205e7bb" name="Chlamydia Screening">
+    <variable name="Chlamydia Screening" typeRef="kie:tValueset"></variable>
+    <context>
+      <contextEntry>
+        <variable name="valuesetId" typeRef="feel:string"></variable>
+        <literalExpression>
+          <text>"2.16.840.1.113883.3.464.1003.110.12.1052"</text>
+        </literalExpression>
+      </contextEntry>
+    </context>
+  </decision>
+  <inputData id="_12a9d9a9-a762-46a1-9b02-3b0bd5409e7d" name="MeasurementPeriod">
+    <variable name="MeasurementPeriod"></variable>
+  </inputData>
+  <decision id="_6de6642b-d6ed-4f4a-a6a9-4ac6881c98b4" name="InDemographic">
+    <variable id="_fd865dd6-bd4a-4c89-97cf-a5058ac1f828" name="InDemographic"></variable>
+    <informationRequirement>
+      <requiredDecision href="#_12a9d9a9-a762-46a1-9b02-3b0bd5409e7d"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_9248bcc7-c5cc-4152-8a09-ea7e51113964"></requiredDecision>
+    </informationRequirement>
+    <literalExpression id="_7ed929a4-5e5d-4938-b4b5-7b42066ec5f5">
+      <text>// AgeInYearsAt(startofMeasurementPeriod)&gt;=16andAgeInYearsAt(startofMeasurementPeriod)&lt;24and"Patient"."gender"in"Female Administrative Sex"</text>
+    </literalExpression>
+  </decision>
+  <decision id="_cfb73070-292a-4b8f-af9b-a9af0780572d" name="SexuallyActive">
+    <variable id="_013b0aa0-bd25-4527-8527-dac49e15cbb0" name="SexuallyActive"></variable>
+    <informationRequirement>
+      <requiredDecision href="#_396519bd-685d-4050-b97b-4120156b5d3e"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_12a9d9a9-a762-46a1-9b02-3b0bd5409e7d"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_384137e2-2a43-4cfd-9527-7f29e2fbd9fd"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_c4bec7b3-c337-4ebf-8f55-332652a48ba4"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_b81ebe44-1059-4df3-b8a8-f5b0e64d28b3"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_e37221cb-e3da-4e7c-9769-ef24ed7c8c13"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_24c508a0-3e95-4349-9161-ada86d33a5af"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_8df1f501-fb49-49ba-a4dc-2122a6217a85"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_63311eda-a0e5-449f-94c5-f21a128131a6"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_5631aadd-813f-43d7-8dc4-0ac8ea59ab68"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_d1fb6ccb-1797-457a-864e-e79c737ecb5e"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_7c7290b0-ce51-414b-a2bf-68f16f7e76f2"></requiredDecision>
+    </informationRequirement>
+    <literalExpression id="_68a8812d-1aa1-49b7-b292-4d22b6ae1ef8">
+      <text>// exists(["Condition":"Other Female Reproductive Conditions"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Genital Herpes"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Genococcal Infections and Venereal Diseases"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Inflammatory Diseases of Female Reproductive Organs"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Chlamydia"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"HIV"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Syphilis"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Complications of Pregnancy, Childbirth and the Puerperium"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["DiagnosticOrder":"Pregnancy Test"]OwhereLast(O."event"EwhereE."status"='completed'sortbyE."dateTime")."dateTime"duringMeasurementPeriod)orexists(["DiagnosticOrder":"Pap Test"]OwhereLast(O."event"EwhereE."status"='completed'sortbyE."dateTime")."dateTime"duringMeasurementPeriod)orexists(["DiagnosticOrder":"Lab Tests During Pregnancy"]OwhereLast(O."event"EwhereE."status"='completed')."dateTime"duringMeasurementPeriod)orexists(["DiagnosticOrder":"Lab Tests for Sexually Transmitted Infections"]OwhereLast(O."event"EwhereE."status"='completed')."dateTime"duringMeasurementPeriod)</text>
+    </literalExpression>
+  </decision>
+  <decision id="_a7a13119-7531-4758-8fad-58b318ab9a49" name="InInitialPopulation">
+    <variable id="_8487f6df-5f28-451d-b99f-cb07be99917c" name="InInitialPopulation"></variable>
+    <informationRequirement>
+      <requiredDecision href="#_6de6642b-d6ed-4f4a-a6a9-4ac6881c98b4"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_cfb73070-292a-4b8f-af9b-a9af0780572d"></requiredDecision>
+    </informationRequirement>
+    <literalExpression id="_4268c277-943f-4c9c-83c4-aa8613df2f04">
+      <text>// "InDemographic"and"SexuallyActive"</text>
+    </literalExpression>
+  </decision>
+  <decision id="_fb3ad36f-bda4-4870-ac6d-c4b1ac2c3410" name="InDenominator">
+    <variable id="_f60b8dec-a07b-4173-ae2c-d09cf4292c1c" name="InDenominator"></variable>
+    <literalExpression id="_deb375c5-ded4-460b-b47a-860798a9d88c">
+      <text>// true</text>
+    </literalExpression>
+  </decision>
+  <decision id="_84ebb75d-e3b0-408a-a8ac-711073e7ada2" name="InNumerator">
+    <variable id="_d63ffa02-dcfc-4e5d-ac22-7d17ff040e91" name="InNumerator"></variable>
+    <informationRequirement>
+      <requiredDecision href="#_21ece065-6758-4980-ba21-70814205e7bb"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_12a9d9a9-a762-46a1-9b02-3b0bd5409e7d"></requiredDecision>
+    </informationRequirement>
+    <literalExpression id="_ccdd07c3-de74-4f8e-a0a3-a2345debcaae">
+      <text>// exists(["DiagnosticReport":"Chlamydia Screening"]RwhereR."issued"duringMeasurementPeriodandR."result"isnotnull)</text>
+    </literalExpression>
+  </decision>
+  <decision id="_5b0f50eb-f8bc-4818-ab5c-a2a6f471eac2" name="MeasureScore">
+    <variable id="_96622373-fce2-4217-b63c-a0396ed13b78" name="MeasureScore"></variable>
+    <informationRequirement>
+      <requiredDecision href="#_a7a13119-7531-4758-8fad-58b318ab9a49"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_fb3ad36f-bda4-4870-ac6d-c4b1ac2c3410"></requiredDecision>
+    </informationRequirement>
+    <informationRequirement>
+      <requiredDecision href="#_84ebb75d-e3b0-408a-a8ac-711073e7ada2"></requiredDecision>
+    </informationRequirement>
+    <literalExpression id="_3ba0e562-3fbc-49d0-9564-e5f9bb278f18">
+      <text>// (Count(PatientPwhere"InInitialPopulation"and"InDenominator"and"InNumerator")/Count("Patient"Pwhere"InInitialPopulation"and"InDenominator"))*100</text>
+    </literalExpression>
+  </decision>
+</definitions>

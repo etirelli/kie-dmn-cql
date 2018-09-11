@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<semantic:definitions xmlns:semantic="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns:triso="http://www.trisotech.com/2015/triso/modeling" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:tc="http://www.omg.org/spec/DMN/20160719/testcase" xmlns:trisofeed="http://trisotech.com/feed" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.trisotech.com/definitions/_ed93922a-f5f6-4daa-a90d-e57b6af6dae0" id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0" namespace="http://www.trisotech.com/definitions/_ed93922a-f5f6-4daa-a90d-e57b6af6dae0"          exporter="DMN Modeler" exporterVersion="6.1.8" name="Chlamydia Screening" triso:logoChoice="Default">
+    <semantic:extensionElements/>
+    <semantic:itemDefinition isCollection="false" name="tValueset" label="tValueset">
+        <semantic:itemComponent isCollection="false" name="valuesetId" id="tValueset_1">
+            <semantic:typeRef>string</semantic:typeRef>
+        </semantic:itemComponent>
+        <semantic:itemComponent isCollection="false" name="versionSpecifier" id="tValueset_2">
+            <semantic:typeRef>string</semantic:typeRef>
+        </semantic:itemComponent>
+        <semantic:itemComponent isCollection="true" name="codesystems" id="tValueset_3">
+            <semantic:typeRef>string</semantic:typeRef>
+        </semantic:itemComponent>
+    </semantic:itemDefinition>
+    <semantic:decision id="_9248bcc7-c5cc-4152-8a09-ea7e51113964" name="Female Administrative Sex">
+        <semantic:variable name="Female Administrative Sex" id="_6c85f002-e0ae-46a3-b456-1e2ec0c8a930" typeRef="tValueset"/>
+        <semantic:context id="_0cdd769e-4adc-4363-9f7d-65204c55887a" typeRef="tValueset">
+            <semantic:contextEntry id="_dbe930d0-4428-4857-9b3b-983e24b1d8ed">
+                <semantic:variable name="valuesetId" id="_6b962610-53dc-4936-85c4-ff4520e4b3f8" typeRef="string"/>
+                <semantic:literalExpression id="_c4a6bfd8-3593-4b30-9daa-6f5c8e2ef4be">
+                    <semantic:text>"2.16.840.1.113883.3.560.100.2"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_396519bd-685d-4050-b97b-4120156b5d3e" name="Other Female Reproductive Conditions">
+        <semantic:variable name="Other Female Reproductive Conditions" id="_b7adcdfc-5934-4705-b379-9ce79d01b101" typeRef="tValueset"/>
+        <semantic:context id="_1846a44b-82dd-48a7-a654-3048c0e71776" typeRef="tValueset">
+            <semantic:contextEntry id="_aa55f01e-0cdf-4e41-a182-dd6e86b97d5b">
+                <semantic:variable name="valuesetId" id="_5c74ec4c-1aa7-4380-a53a-c80f64c9a9e6" typeRef="string"/>
+                <semantic:literalExpression id="_86e6e5cc-1479-4b1c-a85c-9836947e76bb">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.111.12.1006"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_384137e2-2a43-4cfd-9527-7f29e2fbd9fd" name="Genital Herpes">
+        <semantic:variable name="Genital Herpes" id="_3cd338c1-b9ff-43e5-bbb1-92e70b77886a" typeRef="tValueset"/>
+        <semantic:context id="_12b5d351-8358-434d-983e-0f6080aeebe0" typeRef="tValueset">
+            <semantic:contextEntry id="_86422ce7-a47f-44f6-bde8-ebf8591bdbf5">
+                <semantic:variable name="valuesetId" id="_2c09d66d-48fc-4220-b4ec-500a0adf3b33" typeRef="string"/>
+                <semantic:literalExpression id="_aedb438c-7f6b-4f9c-8617-5bab079c5e0e">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.110.12.1049"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_c4bec7b3-c337-4ebf-8f55-332652a48ba4" name="Genococcal Infections and Venereal Diseases">
+        <semantic:variable name="Genococcal Infections and Venereal Diseases" id="_b7aff369-58a1-488a-959e-57dc63d718a0" typeRef="tValueset"/>
+        <semantic:context id="_a3086f77-011d-44f8-a479-1b5b35ed1a96" typeRef="tValueset">
+            <semantic:contextEntry id="_7ff7cbbf-9d2b-4d32-ac9d-64be1cf63479">
+                <semantic:variable name="valuesetId" id="_bfcc5fa6-6786-4bf0-b4c3-63f577424e80" typeRef="string"/>
+                <semantic:literalExpression id="_a1af65ad-a779-4792-90a3-6d5a0e85149e">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.112.12.1001"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_b81ebe44-1059-4df3-b8a8-f5b0e64d28b3" name="Inflammatory Diseases of Female Reproductive Organs">
+        <semantic:variable name="Inflammatory Diseases of Female Reproductive Organs" id="_25c8dacf-97f0-491a-ad9c-03609ba1f29c" typeRef="tValueset"/>
+        <semantic:context id="_fcbe8934-00e5-4bc2-a5fe-2b2428cdc10c" typeRef="tValueset">
+            <semantic:contextEntry id="_cc595d99-97c3-4309-84e3-2cb07d7222d5">
+                <semantic:variable name="valuesetId" id="_81a523a3-e89d-4379-9382-afa7c22bb3e3" typeRef="string"/>
+                <semantic:literalExpression id="_a44a2baa-e094-41c8-9391-a9516f1aadbf">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.112.12.1004"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_e37221cb-e3da-4e7c-9769-ef24ed7c8c13" name="Chlamydia">
+        <semantic:variable name="Chlamydia" id="_9db9874b-e99c-4d14-bd1d-b0846c2eded9" typeRef="tValueset"/>
+        <semantic:context id="_a83e8d94-d405-46be-8cb0-5c228e1d21a0" typeRef="tValueset">
+            <semantic:contextEntry id="_b4fc3143-3c7f-41b6-ba00-f0899b67504e">
+                <semantic:variable name="valuesetId" id="_f4db0bf3-261a-4ad0-85ed-896dee0741ff" typeRef="string"/>
+                <semantic:literalExpression id="_7dbb8d77-7fa1-48f6-92ae-c7bf52beb4ea">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.112.12.1003"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_24c508a0-3e95-4349-9161-ada86d33a5af" name="HIV">
+        <semantic:variable name="HIV" id="_20296935-194c-4f92-a82c-a5ab1e2d2dfd" typeRef="tValueset"/>
+        <semantic:context id="_d3ef619a-f692-435d-b0e4-e02c2582d9db" typeRef="tValueset">
+            <semantic:contextEntry id="_e1d4abc2-f4c2-47be-8ea9-79f952094b2e">
+                <semantic:variable name="valuesetId" id="_6a6c02a0-4d81-4ad3-8f3b-f29c8ea562e1" typeRef="string"/>
+                <semantic:literalExpression id="_18db7032-d002-4b07-8fff-efbb2221ed33">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.120.12.1003"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_8df1f501-fb49-49ba-a4dc-2122a6217a85" name="Syphilis">
+        <semantic:variable name="Syphilis" id="_e646fca7-6e6e-4e6b-b102-24f6399d4050" typeRef="tValueset"/>
+        <semantic:context id="_c8c75bcd-d7b6-4202-a844-2c126864c4b1" typeRef="tValueset">
+            <semantic:contextEntry id="_bbedd3a0-4de1-4c90-9c38-0016370dd542">
+                <semantic:variable name="valuesetId" id="_5b394327-92f8-46e3-a128-8a15d85845aa" typeRef="string"/>
+                <semantic:literalExpression id="_7b29ead7-f15b-45aa-98f9-afdb77ecdffe">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.112.12.1002"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_389629a5-ebeb-461a-897c-33592ad3b517" name="Complications of Pregnancy Childbirth and the Puerperium">
+        <semantic:variable name="Complications of Pregnancy Childbirth and the Puerperium" id="_052bf8b0-df36-4e4a-93a6-f8ff6b9b6325" typeRef="tValueset"/>
+        <semantic:context id="_d2ca6c71-ad0c-4fee-9db5-5211b70b9d01" typeRef="tValueset">
+            <semantic:contextEntry id="_eade13e4-8e04-4404-8b5c-8b7d24e60d54">
+                <semantic:variable name="valuesetId" id="_1f865041-e530-40c8-bce0-29a924868dae" typeRef="string"/>
+                <semantic:literalExpression id="_a7a2b29d-c992-4525-bdaa-88f5aa7f807b">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.111.12.1012"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_63311eda-a0e5-449f-94c5-f21a128131a6" name="Pregnancy Test">
+        <semantic:variable name="Pregnancy Test" id="_4d266779-4771-451d-ba83-08616e283c4a" typeRef="tValueset"/>
+        <semantic:context id="_ba3a3870-a391-4ae5-b715-f6a656643fa4" typeRef="tValueset">
+            <semantic:contextEntry id="_11c660e8-3a1c-4913-b388-9915b7c27a0b">
+                <semantic:variable name="valuesetId" id="_0e444058-5ad8-4880-b178-376a2b278e9f" typeRef="string"/>
+                <semantic:literalExpression id="_25430235-77c2-4b34-a030-3f4f34428946">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.111.12.1011"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_5631aadd-813f-43d7-8dc4-0ac8ea59ab68" name="Pap Test">
+        <semantic:variable name="Pap Test" id="_6cb6eb02-c1a1-4044-b463-050603eda096" typeRef="tValueset"/>
+        <semantic:context id="_102ede8e-0000-4a83-b9e6-243b47a3d395" typeRef="tValueset">
+            <semantic:contextEntry id="_7e567e73-7b15-47af-b1b5-3dcc6970b535">
+                <semantic:variable name="valuesetId" id="_79b21329-1500-40ac-9f68-e5fc6c3efb68" typeRef="string"/>
+                <semantic:literalExpression id="_5e13c011-5065-4c51-8812-98c509e5c933">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.108.12.1017"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_d1fb6ccb-1797-457a-864e-e79c737ecb5e" name="Lab Tests During Pregnancy">
+        <semantic:variable name="Lab Tests During Pregnancy" id="_c86e359f-f926-4165-9ede-5d534edc5ba8" typeRef="tValueset"/>
+        <semantic:context id="_56d6770b-0f01-49f5-ac06-05400732aa13" typeRef="tValueset">
+            <semantic:contextEntry id="_f8cd3d50-1755-40b9-8dda-b0af2618a387">
+                <semantic:variable name="valuesetId" id="_3426b52c-e261-49dc-9b23-82306b99892f" typeRef="string"/>
+                <semantic:literalExpression id="_25cfeca7-f8a3-40f4-b5d6-e845357dda68">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.111.12.1007"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_7c7290b0-ce51-414b-a2bf-68f16f7e76f2" name="Lab Tests for Sexually Transmitted Infections">
+        <semantic:variable name="Lab Tests for Sexually Transmitted Infections" id="_37a39b9e-792c-4e2b-99e5-8d2295b14937" typeRef="tValueset"/>
+        <semantic:context id="_79b46017-a71c-4341-a65d-ce615bbc07b2" typeRef="tValueset">
+            <semantic:contextEntry id="_38bf298c-7939-4dc9-8afe-c8aab0c6289c">
+                <semantic:variable name="valuesetId" id="_cf0a8776-0d51-481b-8558-e9a5753c7dcc" typeRef="string"/>
+                <semantic:literalExpression id="_8951c345-c27a-4cf7-b1de-477657255e03">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.110.12.1051"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:decision id="_21ece065-6758-4980-ba21-70814205e7bb" name="Chlamydia Screening">
+        <semantic:variable name="Chlamydia Screening" id="_c9624e3f-348b-4233-bb2b-ca6433d1a31d" typeRef="tValueset"/>
+        <semantic:context id="_f87b8289-d0b2-4118-8e05-464633767825" typeRef="tValueset">
+            <semantic:contextEntry id="_bc92dedc-b4ae-45ec-a43a-119ea47057d6">
+                <semantic:variable name="valuesetId" id="_02c2800a-6cba-435e-ac4a-813f3ac70454" typeRef="string"/>
+                <semantic:literalExpression id="_3095be57-d417-416b-b362-8ad9e1f15052">
+                    <semantic:text>"2.16.840.1.113883.3.464.1003.110.12.1052"</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:inputData id="_12a9d9a9-a762-46a1-9b02-3b0bd5409e7d" name="MeasurementPeriod">
+        <semantic:variable name="MeasurementPeriod" id="_aa8b3ac8-0804-4bf2-8c62-8fd289537d4e"/>
+    </semantic:inputData>
+    <semantic:decision id="_6de6642b-d6ed-4f4a-a6a9-4ac6881c98b4" name="InDemographic">
+        <semantic:variable name="InDemographic" id="_fd865dd6-bd4a-4c89-97cf-a5058ac1f828"/>
+        <semantic:informationRequirement id="a9c10dc9-a9ce-45d0-a050-606ad76d928e">
+            <semantic:requiredInput href="#_12a9d9a9-a762-46a1-9b02-3b0bd5409e7d"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_3f8d9499-ca0a-462e-99fd-3ea648b4045f">
+            <semantic:requiredDecision href="#_9248bcc7-c5cc-4152-8a09-ea7e51113964"/>
+        </semantic:informationRequirement>
+        <semantic:literalExpression id="_7ed929a4-5e5d-4938-b4b5-7b42066ec5f5">
+            <semantic:text>// AgeInYearsAt(startofMeasurementPeriod)&gt;=16andAgeInYearsAt(startofMeasurementPeriod)&lt;24and"Patient"."gender"in"Female Administrative Sex"</semantic:text>
+        </semantic:literalExpression>
+    </semantic:decision>
+    <semantic:decision id="_cfb73070-292a-4b8f-af9b-a9af0780572d" name="SexuallyActive">
+        <semantic:variable name="SexuallyActive" id="_013b0aa0-bd25-4527-8527-dac49e15cbb0"/>
+        <semantic:informationRequirement id="_5357e50a-71b1-4d95-917e-c44efa9851f6">
+            <semantic:requiredDecision href="#_396519bd-685d-4050-b97b-4120156b5d3e"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_4008995b-932b-42f3-a986-e4bff241a1ab">
+            <semantic:requiredInput href="#_12a9d9a9-a762-46a1-9b02-3b0bd5409e7d"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_65a944ba-3eda-40a0-a90c-8e22d3f24a02">
+            <semantic:requiredDecision href="#_384137e2-2a43-4cfd-9527-7f29e2fbd9fd"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="c57cd715-ee19-4483-9068-c74d37f7c1db">
+            <semantic:requiredDecision href="#_c4bec7b3-c337-4ebf-8f55-332652a48ba4"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_19242e87-74bd-4871-8354-b1c150d5f932">
+            <semantic:requiredDecision href="#_b81ebe44-1059-4df3-b8a8-f5b0e64d28b3"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="a047a1b0-cbac-4874-860d-458546cb0845">
+            <semantic:requiredDecision href="#_e37221cb-e3da-4e7c-9769-ef24ed7c8c13"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_924f8580-0e9b-4513-aee9-2398cf828860">
+            <semantic:requiredDecision href="#_24c508a0-3e95-4349-9161-ada86d33a5af"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_4198bd29-9d21-4af3-aa26-dc51a5cf8322">
+            <semantic:requiredDecision href="#_8df1f501-fb49-49ba-a4dc-2122a6217a85"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_1f4e6b22-fec9-4bb9-8ab1-eeb73caa573f">
+            <semantic:requiredDecision href="#_63311eda-a0e5-449f-94c5-f21a128131a6"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="a32d52f7-e82d-4115-8986-b78820a92d54">
+            <semantic:requiredDecision href="#_5631aadd-813f-43d7-8dc4-0ac8ea59ab68"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_483ae258-31f8-4d69-99a0-90404c45b4ec">
+            <semantic:requiredDecision href="#_d1fb6ccb-1797-457a-864e-e79c737ecb5e"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="f8976f14-e4b1-4de2-9a01-46be993635b4">
+            <semantic:requiredDecision href="#_7c7290b0-ce51-414b-a2bf-68f16f7e76f2"/>
+        </semantic:informationRequirement>
+        <semantic:literalExpression id="_68a8812d-1aa1-49b7-b292-4d22b6ae1ef8">
+            <semantic:text>// exists(["Condition":"Other Female Reproductive Conditions"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Genital Herpes"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Genococcal Infections and Venereal Diseases"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Inflammatory Diseases of Female Reproductive Organs"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Chlamydia"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"HIV"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Syphilis"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["Condition":"Complications of Pregnancy, Childbirth and the Puerperium"]CwhereInterval[C."onsetDateTime",C."abatementDate"]overlapsMeasurementPeriod)orexists(["DiagnosticOrder":"Pregnancy Test"]OwhereLast(O."event"EwhereE."status"='completed'sortbyE."dateTime")."dateTime"duringMeasurementPeriod)orexists(["DiagnosticOrder":"Pap Test"]OwhereLast(O."event"EwhereE."status"='completed'sortbyE."dateTime")."dateTime"duringMeasurementPeriod)orexists(["DiagnosticOrder":"Lab Tests During Pregnancy"]OwhereLast(O."event"EwhereE."status"='completed')."dateTime"duringMeasurementPeriod)orexists(["DiagnosticOrder":"Lab Tests for Sexually Transmitted Infections"]OwhereLast(O."event"EwhereE."status"='completed')."dateTime"duringMeasurementPeriod)</semantic:text>
+        </semantic:literalExpression>
+    </semantic:decision>
+    <semantic:decision id="_a7a13119-7531-4758-8fad-58b318ab9a49" name="InInitialPopulation">
+        <semantic:variable name="InInitialPopulation" id="_8487f6df-5f28-451d-b99f-cb07be99917c"/>
+        <semantic:informationRequirement id="_6d9fa510-5999-437f-983b-2679f1316596">
+            <semantic:requiredDecision href="#_6de6642b-d6ed-4f4a-a6a9-4ac6881c98b4"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="d0ddcd35-b842-4440-9729-4a08b035a433">
+            <semantic:requiredDecision href="#_cfb73070-292a-4b8f-af9b-a9af0780572d"/>
+        </semantic:informationRequirement>
+        <semantic:literalExpression id="_4268c277-943f-4c9c-83c4-aa8613df2f04">
+            <semantic:text>// "InDemographic"and"SexuallyActive"</semantic:text>
+        </semantic:literalExpression>
+    </semantic:decision>
+    <semantic:decision id="_fb3ad36f-bda4-4870-ac6d-c4b1ac2c3410" name="InDenominator">
+        <semantic:variable name="InDenominator" id="_f60b8dec-a07b-4173-ae2c-d09cf4292c1c"/>
+        <semantic:literalExpression id="_deb375c5-ded4-460b-b47a-860798a9d88c">
+            <semantic:text>// true</semantic:text>
+        </semantic:literalExpression>
+    </semantic:decision>
+    <semantic:decision id="_84ebb75d-e3b0-408a-a8ac-711073e7ada2" name="InNumerator">
+        <semantic:variable name="InNumerator" id="_d63ffa02-dcfc-4e5d-ac22-7d17ff040e91"/>
+        <semantic:informationRequirement id="aa30e327-f51b-4f3e-a676-5017a4f082bd">
+            <semantic:requiredDecision href="#_21ece065-6758-4980-ba21-70814205e7bb"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_4b34d126-db3a-40a0-aa82-f60bae075a69">
+            <semantic:requiredInput href="#_12a9d9a9-a762-46a1-9b02-3b0bd5409e7d"/>
+        </semantic:informationRequirement>
+        <semantic:literalExpression id="_ccdd07c3-de74-4f8e-a0a3-a2345debcaae">
+            <semantic:text>// exists(["DiagnosticReport":"Chlamydia Screening"]RwhereR."issued"duringMeasurementPeriodandR."result"isnotnull)</semantic:text>
+        </semantic:literalExpression>
+    </semantic:decision>
+    <semantic:decision id="_5b0f50eb-f8bc-4818-ab5c-a2a6f471eac2" name="MeasureScore">
+        <semantic:variable name="MeasureScore" id="_96622373-fce2-4217-b63c-a0396ed13b78"/>
+        <semantic:informationRequirement id="_5ebc82b9-bf41-4197-a928-83b3af0f52a1">
+            <semantic:requiredDecision href="#_a7a13119-7531-4758-8fad-58b318ab9a49"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="dff5008a-24a8-4440-ac65-aba26846d789">
+            <semantic:requiredDecision href="#_fb3ad36f-bda4-4870-ac6d-c4b1ac2c3410"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_83ca3cb9-6ce6-48d7-9646-e24c272687b7">
+            <semantic:requiredDecision href="#_84ebb75d-e3b0-408a-a8ac-711073e7ada2"/>
+        </semantic:informationRequirement>
+        <semantic:literalExpression id="_3ba0e562-3fbc-49d0-9564-e5f9bb278f18">
+            <semantic:text>// (Count(PatientPwhere"InInitialPopulation"and"InDenominator"and"InNumerator")/Count("Patient"Pwhere"InInitialPopulation"and"InDenominator"))*100</semantic:text>
+        </semantic:literalExpression>
+    </semantic:decision>
+    <dmndi:DMNDI>
+        <dmndi:DMNDiagram id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_D1" name="Page 1">
+            <dmndi:Size height="1204" width="3021"/>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s1" dmnElementRef="_9248bcc7-c5cc-4152-8a09-ea7e51113964">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2365.728395468723" y="657.1975309695799" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s2" dmnElementRef="_396519bd-685d-4050-b97b-4120156b5d3e">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="1274.932097984149" y="667" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s3" dmnElementRef="_384137e2-2a43-4cfd-9527-7f29e2fbd9fd">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="1274.9320979841493" y="762" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s4" dmnElementRef="_c4bec7b3-c337-4ebf-8f55-332652a48ba4">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="1274.932097984149" y="858.0000000000002" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s5" dmnElementRef="_b81ebe44-1059-4df3-b8a8-f5b0e64d28b3">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="1274.932097984149" y="957.0000000000005" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s6" dmnElementRef="_e37221cb-e3da-4e7c-9769-ef24ed7c8c13">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="1491.932097984149" y="957.0000000000005" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s7" dmnElementRef="_24c508a0-3e95-4349-9161-ada86d33a5af">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="1708.932097984149" y="957" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s8" dmnElementRef="_8df1f501-fb49-49ba-a4dc-2122a6217a85">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="1919.9320979841493" y="957.0000000000002" width="154.00000000000023" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s9" dmnElementRef="_63311eda-a0e5-449f-94c5-f21a128131a6">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2123.932097984149" y="957.0000000000002" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s10" dmnElementRef="_5631aadd-813f-43d7-8dc4-0ac8ea59ab68">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2123.9320979841496" y="858.0000000000003" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s11" dmnElementRef="_d1fb6ccb-1797-457a-864e-e79c737ecb5e">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2123.9320979841496" y="762.0000000000001" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s12" dmnElementRef="_7c7290b0-ce51-414b-a2bf-68f16f7e76f2">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2123.9320979841496" y="667.0000000000001" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s13" dmnElementRef="_21ece065-6758-4980-ba21-70814205e7bb">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="204"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2602.7968220948746" y="508.2962963071979" width="154" height="61.00000000000006"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s14" dmnElementRef="_12a9d9a9-a762-46a1-9b02-3b0bd5409e7d">
+                <dc:Bounds x="2098.6815962722253" y="512.5000000000002" width="153" height="60"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s15" dmnElementRef="_6de6642b-d6ed-4f4a-a6a9-4ac6881c98b4">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="255"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2366" y="512" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s16" dmnElementRef="_cfb73070-292a-4b8f-af9b-a9af0780572d">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="255"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="1699.432097984149" y="512" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s17" dmnElementRef="_a7a13119-7531-4758-8fad-58b318ab9a49">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="255"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2075.876544063837" y="334.70370369280215" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s18" dmnElementRef="_fb3ad36f-bda4-4870-ac6d-c4b1ac2c3410">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="255"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="1861.8765440638372" y="334.70370369280215" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s19" dmnElementRef="_84ebb75d-e3b0-408a-a8ac-711073e7ada2">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="204" green="255" blue="255"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2304.876544063837" y="334.70370369280215" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s20" dmnElementRef="_5b0f50eb-f8bc-4818-ab5c-a2a6f471eac2">
+                <dmndi:DMNStyle>
+                    <dmndi:FillColor red="255" green="204" blue="153"/>
+                </dmndi:DMNStyle>
+                <dc:Bounds x="2075.876544063837" y="153.7037036928021" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e1" dmnElementRef="a9c10dc9-a9ce-45d0-a050-606ad76d928e">
+                <di:waypoint x="2252.4372267653894" y="542.5000000000002"/>
+                <di:waypoint x="2366" y="542.5"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e2" dmnElementRef="_3f8d9499-ca0a-462e-99fd-3ea648b4045f">
+                <di:waypoint x="2442.728395468723" y="657.1975309695799"/>
+                <di:waypoint x="2443" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e3" dmnElementRef="_5357e50a-71b1-4d95-917e-c44efa9851f6">
+                <di:waypoint x="1428.932097984149" y="697.5"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e4" dmnElementRef="_4008995b-932b-42f3-a986-e4bff241a1ab">
+                <di:waypoint x="2098.919568531747" y="542.5000000000002"/>
+                <di:waypoint x="1853.432097984149" y="542.5"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e5" dmnElementRef="_65a944ba-3eda-40a0-a90c-8e22d3f24a02">
+                <di:waypoint x="1428.9320979841493" y="792.5"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e6" dmnElementRef="c57cd715-ee19-4483-9068-c74d37f7c1db">
+                <di:waypoint x="1428.932097984149" y="888.5000000000002"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e7" dmnElementRef="_19242e87-74bd-4871-8354-b1c150d5f932">
+                <di:waypoint x="1428.932097984149" y="987.5000000000005"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e8" dmnElementRef="a047a1b0-cbac-4874-860d-458546cb0845">
+                <di:waypoint x="1568.932097984149" y="957.0000000000005"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e9" dmnElementRef="_924f8580-0e9b-4513-aee9-2398cf828860">
+                <di:waypoint x="1785.932097984149" y="957"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e10" dmnElementRef="_4198bd29-9d21-4af3-aa26-dc51a5cf8322">
+                <di:waypoint x="1996.9320979841496" y="957.0000000000002"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e11" dmnElementRef="_1f4e6b22-fec9-4bb9-8ab1-eeb73caa573f">
+                <di:waypoint x="2123.932097984149" y="987.5000000000002"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e12" dmnElementRef="a32d52f7-e82d-4115-8986-b78820a92d54">
+                <di:waypoint x="2123.9320979841496" y="888.5000000000003"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e13" dmnElementRef="_483ae258-31f8-4d69-99a0-90404c45b4ec">
+                <di:waypoint x="2123.9320979841496" y="792.5000000000001"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e14" dmnElementRef="f8976f14-e4b1-4de2-9a01-46be993635b4">
+                <di:waypoint x="2123.9320979841496" y="697.5000000000001"/>
+                <di:waypoint x="1776.432097984149" y="573"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e15" dmnElementRef="_6d9fa510-5999-437f-983b-2679f1316596">
+                <di:waypoint x="2443" y="512"/>
+                <di:waypoint x="2152.876544063837" y="395.70370369280215"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e16" dmnElementRef="d0ddcd35-b842-4440-9729-4a08b035a433">
+                <di:waypoint x="1776.432097984149" y="512"/>
+                <di:waypoint x="2152.876544063837" y="395.70370369280215"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e17" dmnElementRef="aa30e327-f51b-4f3e-a676-5017a4f082bd">
+                <di:waypoint x="2679.7968220948746" y="508.2962963071979"/>
+                <di:waypoint x="2381.876544063837" y="395.70370369280215"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e18" dmnElementRef="_5ebc82b9-bf41-4197-a928-83b3af0f52a1">
+                <di:waypoint x="2152.876544063837" y="334.70370369280215"/>
+                <di:waypoint x="2152.876544063837" y="214.7037036928021"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e19" dmnElementRef="dff5008a-24a8-4440-ac65-aba26846d789">
+                <di:waypoint x="1938.8765440638372" y="334.70370369280215"/>
+                <di:waypoint x="2152.876544063837" y="214.7037036928021"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e20" dmnElementRef="_83ca3cb9-6ce6-48d7-9646-e24c272687b7">
+                <di:waypoint x="2381.876544063837" y="334.70370369280215"/>
+                <di:waypoint x="2152.876544063837" y="214.7037036928021"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+            <dmndi:DMNEdge id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_e21" dmnElementRef="_4b34d126-db3a-40a0-aa82-f60bae075a69">
+                <di:waypoint x="2174.6815962722253" y="512.5000000000002"/>
+                <di:waypoint x="2381.876544063837" y="395.70370369280215"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNEdge>
+        </dmndi:DMNDiagram>
+        <dmndi:DMNDiagram id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_D2" name="Page 2">
+            <dmndi:Size height="undefined" width="undefined"/>
+            <dmndi:DMNShape id="_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_s21" dmnElementRef="_389629a5-ebeb-461a-897c-33592ad3b517">
+                <dc:Bounds x="106" y="106" width="154" height="61"/>
+                <dmndi:DMNLabel sharedStyle="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0"/>
+            </dmndi:DMNShape>
+        </dmndi:DMNDiagram>
+        <dmndi:DMNStyle id="LS_ed93922a-f5f6-4daa-a90d-e57b6af6dae0_0" fontFamily="arial,helvetica,sans-serif" fontSize="11" fontBold="false" fontItalic="false" fontUnderline="false" fontStrikeThrough="false"/>
+    </dmndi:DMNDI>
+</semantic:definitions>

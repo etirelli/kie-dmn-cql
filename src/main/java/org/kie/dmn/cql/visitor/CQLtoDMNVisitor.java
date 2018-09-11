@@ -3,6 +3,8 @@ package org.kie.dmn.cql.visitor;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.cqframework.cql.gen.cqlBaseVisitor;
 import org.cqframework.cql.gen.cqlParser;
+import org.kie.dmn.api.core.ast.InputDataNode;
+import org.kie.dmn.core.ast.InputDataNodeImpl;
 import org.kie.dmn.model.v1_1.*;
 
 import javax.xml.namespace.QName;
@@ -33,6 +35,17 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
                 Decision decision = (Decision) visit(vsd);
                 dmnElements.put( decision.getName(), decision );
                 def.getDrgElement().add(decision);
+            }
+        }
+
+        List<cqlParser.ParameterDefinitionContext> parameters = ctx.parameterDefinition();
+        if( ! parameters.isEmpty() ) {
+            for(cqlParser.ParameterDefinitionContext stc : parameters ) {
+                InputData input = (InputData) visit(stc);
+                if( input != null ) {
+                    dmnElements.put( input.getName(), input );
+                    def.getDrgElement().add( input );
+                }
             }
         }
 
@@ -103,8 +116,8 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
         decision.setVariable( var );
 
         LiteralExpression expression = new LiteralExpression();
-        //String exprString = "// " + ctx.expression().getText();
-        expression.setText("\"foo\"");
+        String exprString = "// " + ctx.expression().getText();
+        expression.setText(exprString);
         expression.setId( generateId() );
         decision.setExpression( expression );
 
@@ -118,8 +131,35 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
     @Override
     public Object visitMemberInvocation(cqlParser.MemberInvocationContext ctx) {
         String invocation = unquote( ctx );
-        if( currentDecision != null && dmnElements.containsKey( invocation ) ) {
-            DMNElement dmnElement = dmnElements.get(invocation);
+        addInformationRequirement(invocation);
+        return super.visitMemberInvocation(ctx);
+    }
+
+    @Override
+    public Object visitQualifiedIdentifier(cqlParser.QualifiedIdentifierContext ctx) {
+        String qualifiedName = unquote( ctx );
+        addInformationRequirement( qualifiedName );
+        return super.visitQualifiedIdentifier(ctx);
+    }
+
+    @Override
+    public Object visitParameterDefinition(cqlParser.ParameterDefinitionContext ctx) {
+        InputData input = new InputData();
+        input.setName( unquote( ctx.identifier() ) );
+        input.setId( generateId() );
+
+        InformationItem var = new InformationItem();
+        var.setName( input.getName() );
+        //var.setTypeRef( new QName( "kie:"+T_VALUESET ) );
+
+        input.setVariable( var );
+
+        return input;
+    }
+
+    private void addInformationRequirement(String name) {
+        if( currentDecision != null && dmnElements.containsKey(name) ) {
+            DMNElement dmnElement = dmnElements.get(name);
             DMNElementReference ref = new DMNElementReference();
             ref.setHref( "#"+dmnElement.getId() );
 
@@ -130,7 +170,6 @@ public class CQLtoDMNVisitor extends cqlBaseVisitor {
                 currentDecision.getInformationRequirement().add( req );
             }
         }
-        return super.visitMemberInvocation(ctx);
     }
 
     private boolean contains(List<InformationRequirement> informationRequirement, InformationRequirement ir) {
