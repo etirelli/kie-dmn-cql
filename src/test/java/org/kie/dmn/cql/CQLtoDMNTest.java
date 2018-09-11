@@ -36,7 +36,7 @@ public class CQLtoDMNTest {
             System.out.println( m );
         }
 
-        File out = new File("ChlamydiaScreening_CQM.dmn" );
+        File out = new File("output/ChlamydiaScreening_CQM.dmn" );
         PrintWriter writer = new PrintWriter( out );
         writer.write( dmn );
         writer.close();
